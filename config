@@ -243,8 +243,8 @@ bar {
 
 exec sh ~/.config/sway/autostart.sh
 
-include ~/.config/sway/conf.d/*
-include ~/.config/sway/local.conf.d/*
+include ~/.config/sway/conf.d/*.conf
+include ~/.config/sway/local.conf.d/*.conf
 
 include /etc/sway/config.d/*
 
