@@ -1,6 +1,0 @@
-set $sway_config ~/.config/sway/
-
-include /etc/sway/config.d/*
-include $sway_config/conf.d/*.conf
-
-exec /bin/sh $sway_config/autostart.sh
