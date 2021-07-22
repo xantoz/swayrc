@@ -10,4 +10,29 @@ include $sway_config/conf.avail/60-mako.conf
 exec mako
 include $sway_config/hosts/sumireko/90-input.conf
 
+# output * bg /home/tewi_inaba/Pictures/VRChat_1920x1080_2020-09-12_15-50-54.381.png fill
+#output * bg /home/tewi_inaba/Pictures/VRChat_1920x1080_2020-11-04_15-35-40.852.png fill
+
+#output * bg /home/tewi_inaba/Pictures/VRChat_1920x1080_2020-08-06_20-35-44.008.png fill
+# output * bg /home/tewi_inaba/Pictures/VRChat_1920x1080_2020-08-06_20-48-16.585.png fill
+
+# output * bg /home/tewi_inaba/Pictures/VRChat_3840x2160_2020-12-01_10-44-55.786.png fill
+output * bg /home/tewi_inaba/Pictures/Ez-46iJWYAAlfcM.jpg fill
+
 exec /bin/sh $sway_config/autostart.sh
+
+
+################################################################################
+# Ugly home manager hacks etc.
+# TODO: look into if home manager has some sway module to make things like this nicer
+#
+# NOTE: expects that a wrapper script run this after sway exits:
+#         systemctl --user stop graphical-session.target
+#         systemctl --user stop graphical-session-pre.target
+#
+exec systemctl --user start hm-graphical-session.target
+
+# NOTE: requires that QT_IM_MODULE GTK_IM_MODULE and CLUTTER_IM_MODULE
+# be set before starting sway (wrapper script or something?)
+exec fcitx
+
