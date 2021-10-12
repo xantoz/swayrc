@@ -1,0 +1,13 @@
+set $sway_config ~/.config/sway/
+
+# include /etc/sway/config.d/*
+
+include $sway_config/conf.avail/00-env.conf
+include $sway_config/hosts/colgate/01-env.conf
+include $sway_config/conf.avail/50-base.conf
+include $sway_config/hosts/colgate/51-bg.conf
+include $sway_config/conf.avail/55-swaybar.conf
+include $sway_config/conf.avail/60-mako.conf
+exec mako
+
+exec /bin/sh $sway_config/autostart.sh
