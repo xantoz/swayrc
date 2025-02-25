@@ -10,6 +10,8 @@ include $sway_config/conf.avail/60-mako.conf
 exec mako
 include $sway_config/hosts/sumireko/90-input.conf
 
+xwayland force
+
 # output * bg /home/tewi_inaba/Pictures/VRChat_1920x1080_2020-09-12_15-50-54.381.png fill
 #output * bg /home/tewi_inaba/Pictures/VRChat_1920x1080_2020-11-04_15-35-40.852.png fill
 
