@@ -9,6 +9,7 @@ include $sway_config/conf.avail/50-base.conf
 # include $sway_config/conf.avail/55-waybar.conf
 include $sway_config/conf.avail/55-sfwbar.conf
 include $sway_config/conf.avail/60-mako.conf
+include $sway_config/conf.avail/66-xwayland-clipboard-sync.conf
 exec mako
 
 input * {
