@@ -20,3 +20,19 @@ input * {
 exec /bin/sh $sway_config/autostart.sh
 
 
+# Maybe I should rename this file seeing as I just put manu different customizations in here (although one downside is that it is imported really early)
+
+#output * bg /home/tewi_inaba/Pictures/GgxcASYa0AAH_V8.jpg fill
+output * bg /home/tewi_inaba/Pictures/wallpaper.png fill
+
+
+# Make workspace 9 have floating windows by default
+for_window [workspace="9"] floating enable
+
+exec_always /usr/libexec/fcitx5-wayland-launcher
+exec blueman-applet
+
+focus_follows_mouse no
+
+
+
