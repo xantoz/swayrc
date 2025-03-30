@@ -1,4 +1,6 @@
 #!/bin/sh
+# Ugly-hack since we lack proper syncing, but sleep for 2 seconds to make sure things can run properly
+sleep 1
 
 #pgrep xss-lock > /dev/null || xss-lock -- physlock -s &
 [ -f ~/.Xresources ] && xrdb -merge ~/.Xresources &
