@@ -1,9 +1,19 @@
 #!/bin/sh
-# Ugly-hack since we lack proper syncing, but sleep for 2 seconds to make sure things can run properly
-sleep 1
+SCRIPT_DIR="$(dirname "$(realpath "$0")")"
 
-#pgrep xss-lock > /dev/null || xss-lock -- physlock -s &
-[ -f ~/.Xresources ] && xrdb -merge ~/.Xresources &
+log()
+{
+    echo "autostart.sh: $*"
+}
+
+
+log "started"
+
+# Ugly-hack since we lack proper syncing, but sleep for 2 seconds to make sure things can run properly
+sleep 2
+
+log "sleeping done"
+
 
 
 export XDG_CURRENT_DESKTOP=sway
@@ -22,3 +32,19 @@ fi
 #     systemctl --user import-environment XDG_SESSION_DESKTOP
 #     systemctl --user import-environment SWAYSOCK
 # fi
+
+
+#pgrep xss-lock > /dev/null || xss-lock -- physlock -s &
+if [ -f ~/.Xresources ]; then
+    log "Loading ~/.Xresources"
+    xrdb -merge ~/.Xresources || log "xrdb -merge ~/.Xresources failed!"
+fi
+
+
+# Is there any autostart script next to the symlinked config file. Run that now too.
+MACHINE_SPECIFIC_AUTOSTART="$(dirname "$(realpath "${SCRIPT_DIR}/config")")/autostart.sh"
+log "Checking if script exists at ${MACHINE_SPECIFIC_AUTOSTART}"
+if [ -x "${MACHINE_SPECIFIC_AUTOSTART}" ]; then
+    log "Checking if script exists at ${MACHINE_SPECIFIC_AUTOSTART}"
+    "${MACHINE_SPECIFIC_AUTOSTART}"
+fi

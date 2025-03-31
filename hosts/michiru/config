@@ -19,6 +19,7 @@ input * {
 
 exec /bin/sh $sway_config/autostart.sh
 
+############################################################
 
 # Maybe I should rename this file seeing as I just put manu different customizations in here (although one downside is that it is imported really early)
 
@@ -29,8 +30,16 @@ output * bg /home/tewi_inaba/Pictures/wallpaper.png fill
 # Make workspace 9 have floating windows by default
 for_window [workspace="9"] floating enable
 
-exec_always /usr/libexec/fcitx5-wayland-launcher
-exec blueman-applet
+
+# # TODO: Should perhaps be part of a sway-session.target thing or so in the future?
+# exec systemctl --user start blueman-applet
+# # exec systemctl --user start fcitx5
+# exec systemctl --user start pasystray
+
+# # Wierdly enough this might still be needed for the cause of launching a nested sway for instance. Although our current setup might be a bit wrong for the case of running a nested sway under plasma (as plasma starts fcitx5 in another way...)
+# # Maybe a per-session service or something that just runs fcitx5-wayland-launcher somehow?
+# exec_always /usr/libexec/fcitx5-wayland-launcher
+
 
 focus_follows_mouse no
 
