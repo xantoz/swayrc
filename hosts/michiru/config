@@ -12,6 +12,8 @@ include $sway_config/conf.avail/56-swayr.conf
 include $sway_config/conf.avail/60-mako.conf
 include $sway_config/conf.avail/66-xwayland-clipboard-sync.conf
 exec mako
+include $sway_config/conf.avail/75-grimshot.conf
+
 
 input * {
       xkb_layout "us,se"
