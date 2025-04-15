@@ -34,6 +34,7 @@ for_window [workspace="9"] floating enable
 # exec_always /usr/libexec/fcitx5-wayland-launcher
 exec blueman-applet
 exec pasystray --notify=all
+exec nm-applet
 
 focus_follows_mouse no
 
